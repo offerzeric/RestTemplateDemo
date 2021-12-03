@@ -1,0 +1,23 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.1.253:10086/eric/eureka
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/demo
+    username: root
+    password: root
+    drive-class-name: com.mysql.jdbc.driver
+  cloud:
+    config:
+      name: server
+      profile: dev
+      label: master
+      discovery:
+        service-id: config-server
+        enabled: true
+
+server:
+  servlet:
+    context-path: /eric
+

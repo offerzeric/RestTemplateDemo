@@ -1,0 +1,32 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /eric
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://192.168.1.253:10086/eric/eureka
+    #      defaultZone: http://192.168.1.253:10086/eric/eureka, http://192.168.1.253:10087/eric/eureka
+    registry-fetch-interval-seconds: 30
+
+spring:
+  application:
+    name: customer-service
+feign:
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
+
+  circuitbreaker:
+    enabled: true
+ribbon:
+  http:
+    client:
+      enabled: true
+logging:
+  level:
+    com.eric.customerservice: debug

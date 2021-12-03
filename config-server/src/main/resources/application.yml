@@ -1,0 +1,16 @@
+server:
+  port: 12000
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/offerzeric/TestConfig.git
+  application:
+    name: config-server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.1.253:10086/eric/eureka
+  instance:
+    prefer-ip-address: true

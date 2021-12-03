@@ -1,0 +1,17 @@
+
+server:
+  port: 10086
+  servlet:
+    context-path: /eric
+eureka:
+  client:
+    fetch-registry: false
+    service-url:
+      defaultZone: http://192.168.1.253:10086/eric/eureka
+    register-with-eureka: false
+#  server:
+#    eviction-interval-timer-in-ms: 90
+
+spring:
+  application:
+    name: eureka-server
